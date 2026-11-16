@@ -1,0 +1,1739 @@
+<!DOCTYPE html>
+<html lang="sd" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NINDHANAKI TEHREEK · آن لائين ميمبرشپ پورٽل</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- html2canvas for crisp Front & Back Card PNG Download -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <!-- Google Fonts: Sindhi/Arabic + English Card Typography + Cursive Signature -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@600;700;800;900&family=Noto+Sans+Arabic:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        tehreekGreen: '#0d5c2f',
+                        tehreekDark: '#083d1f',
+                        tehreekLight: '#e8f3ed',
+                        tehreekRed: '#c0262d'
+                    },
+                    fontFamily: {
+                        sindhi: ['"Noto Sans Arabic"', 'Tahoma', 'Arial', 'sans-serif'],
+                        cardSans: ['"Montserrat"', 'Arial', 'sans-serif'],
+                        cardSerif: ['"Playfair Display"', 'Georgia', 'serif'],
+                        signature: ['"Great Vibes"', 'cursive']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Noto Sans Arabic', Tahoma, Arial, sans-serif;
+            background-color: #0d5c2f;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0d5c2f;
+            border-radius: 9999px;
+        }
+
+        /* ==================== EXACT NTP DIGITAL ID CARD STYLES ==================== */
+        .ntp-card {
+            width: 360px;
+            height: 575px;
+            border-radius: 22px;
+            border: 4.5px solid #e5c158;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45), inset 0 0 0 1.5px #9e7b1c;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            user-select: none;
+            font-family: 'Montserrat', Arial, sans-serif;
+            direction: ltr;
+            text-align: left;
+            flex-shrink: 0;
+        }
+
+        /* Top Lanyard Punch Hole Slot */
+        .ntp-lanyard-slot {
+            width: 86px;
+            height: 22px;
+            background: #ffffff;
+            border: 2.5px solid #e5c158;
+            border-radius: 999px;
+            margin: 10px auto 8px auto;
+            position: relative;
+            z-index: 20;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.28);
+        }
+        .ntp-lanyard-slot::after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 24px;
+            height: 9px;
+            background: #ffffff;
+            border-radius: 999px;
+        }
+
+        /* Rich Crimson Red Silk Drape Background */
+        .ntp-silk-bg {
+            background:
+                radial-gradient(ellipse at 20% 25%, rgba(255, 80, 80, 0.42) 0%, transparent 45%),
+                radial-gradient(ellipse at 85% 35%, rgba(255, 65, 65, 0.35) 0%, transparent 50%),
+                repeating-linear-gradient(
+                    132deg,
+                    #720000 0px,
+                    #a80505 18px,
+                    #540000 36px,
+                    #960202 54px,
+                    #660000 72px
+                );
+        }
+
+        /* Front Card Lower Salmon/Pink Circuit Background */
+        .ntp-front-lower {
+            background: linear-gradient(180deg, #df7878 0%, #e79696 55%, #ebb0b0 100%);
+            position: relative;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Back Card Lower Deep Crimson Circuit Background */
+        .ntp-back-lower {
+            background: linear-gradient(180deg, #750707 0%, #520202 60%, #3d0000 100%);
+            position: relative;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Sharp White Text with Crisp Black Outline */
+        .ntp-text-outline {
+            color: #ffffff;
+            text-shadow:
+                -1.5px -1.5px 0 #000,
+                 1.5px -1.5px 0 #000,
+                -1.5px  1.5px 0 #000,
+                 1.5px  1.5px 0 #000,
+                 0px    2px   3px rgba(0,0,0,0.85);
+        }
+
+        .ntp-yellow-outline {
+            color: #f5d000;
+            text-shadow:
+                -1.2px -1.2px 0 #000,
+                 1.2px -1.2px 0 #000,
+                -1.2px  1.2px 0 #000,
+                 1.2px  1.2px 0 #000,
+                 0px    1.5px 2px rgba(0,0,0,0.8);
+        }
+
+        /* Holographic Metallic Badge */
+        .ntp-holo-badge {
+            background: linear-gradient(135deg, #d7dde5 0%, #9aa4b2 25%, #eef2f7 50%, #7d8897 75%, #cfd6e0 100%);
+            border: 1.5px solid rgba(255,255,255,0.75);
+            box-shadow: inset 0 0 10px rgba(255,255,255,0.6), 0 2px 6px rgba(0,0,0,0.45);
+        }
+
+        /* Print Styles for Exact Card Output */
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            #printableCardsWrapper, #printableCardsWrapper * {
+                visibility: visible;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            #printableCardsWrapper {
+                position: fixed;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                display: flex !important;
+                flex-direction: row !important;
+                gap: 20px !important;
+                justify-content: center !important;
+                align-items: center !important;
+                background: white !important;
+                padding: 10px !important;
+                width: auto !important;
+            }
+            .no-print {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col bg-[#0d5c2f] text-gray-800 selection:bg-[#0d5c2f] selection:text-white">
+
+    <!-- Top Deep Green Header -->
+    <header class="w-full bg-[#0d5c2f] text-white pt-5 pb-8 px-4">
+        <div class="max-w-3xl mx-auto text-center">
+            <!-- Portal Title -->
+            <h1 class="text-base sm:text-xl font-semibold tracking-wide text-white/95 mb-5 leading-relaxed">
+                <span dir="ltr" class="inline-block font-bold tracking-wider">NINDHANAKI TEHREEK</span>
+                <span class="mx-1.5 text-white/70">·</span>
+                <span>آن لائين ميمبرشپ پورٽل</span>
+            </h1>
+
+            <!-- Navigation Tabs -->
+            <nav class="flex items-center justify-center gap-3 sm:gap-4 max-w-md mx-auto" role="tablist">
+                <button 
+                    id="tabBtnForm" 
+                    onclick="switchTab('form')" 
+                    role="tab"
+                    aria-selected="true"
+                    class="flex-1 py-3 px-4 rounded-xl text-sm sm:text-base font-bold transition-all duration-200 bg-white text-[#0d5c2f] shadow-md cursor-pointer focus:outline-none">
+                    ميمبرشپ فارم
+                </button>
+
+                <button 
+                    id="tabBtnAdmin" 
+                    onclick="switchTab('admin')" 
+                    role="tab"
+                    aria-selected="false"
+                    class="flex-1 py-3 px-4 rounded-xl text-sm sm:text-base font-semibold transition-all duration-200 bg-white/10 text-white border border-white/30 hover:bg-white/20 cursor-pointer focus:outline-none">
+                    مرڪزي ايڊمن پينل
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Thin Red Accent Line -->
+    <div class="w-full h-1 bg-[#c0262d]"></div>
+
+    <!-- Main White Rounded Card Container -->
+    <main class="flex-1 w-full max-w-3xl mx-auto -mt-3 px-3 sm:px-4 pb-10">
+        <div class="bg-white rounded-t-[22px] rounded-b-2xl shadow-xl border-t-4 border-[#c0262d] overflow-hidden min-h-[75vh]">
+            
+            <!-- ==================== TAB 1: MEMBERSHIP FORM ==================== -->
+            <section id="sectionForm" class="p-5 sm:p-8">
+                <!-- Form Heading & Subtitle -->
+                <div class="mb-6">
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-[#0d5c2f] mb-2">
+                        ميمبرشپ لاءِ درخواست
+                    </h2>
+                    <p class="text-sm sm:text-base text-gray-500 leading-relaxed">
+                        فارم ڀريو؛ درخواست مرڪزي منظوري لاءِ جمع ٿيندي ۽ منظور ٿيڻ بعد ڊجيٽل شناختي ڪارڊ جاري ٿيندو.
+                    </p>
+                </div>
+
+                <!-- Section Subheader -->
+                <div class="border-b border-gray-200 pb-2.5 mb-6">
+                    <h3 class="text-base sm:text-lg font-bold text-[#0d5c2f]">
+                        ذاتي معلومات (Personal Information)
+                    </h3>
+                </div>
+
+                <!-- Registration Form -->
+                <form id="membershipForm" onsubmit="handleFormSubmit(event)" class="space-y-5" novalidate>
+                    
+                    <!-- Full Name -->
+                    <div>
+                        <label for="fullName" class="block text-sm sm:text-base font-bold text-gray-800 mb-2">
+                            پورو نالو (Full Name - انگريزي يا سنڌي ۾) <span class="text-[#c0262d]">*</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            id="fullName" 
+                            required
+                            placeholder="مثال: MASHOOQ ALI ZARDARI"
+                            class="w-full px-4 py-3.5 rounded-xl border border-gray-300 text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#0d5c2f] focus:ring-2 focus:ring-[#0d5c2f]/20 transition text-base">
+                    </div>
+
+                    <!-- Father's Name -->
+                    <div>
+                        <label for="fatherName" class="block text-sm sm:text-base font-bold text-gray-800 mb-2">
+                            والد جو نالو (Father's Name) <span class="text-[#c0262d]">*</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            id="fatherName" 
+                            required
+                            placeholder="والد جو نالو لکو"
+                            class="w-full px-4 py-3.5 rounded-xl border border-gray-300 text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#0d5c2f] focus:ring-2 focus:ring-[#0d5c2f]/20 transition text-base">
+                    </div>
+
+                    <!-- Mobile Number & Email Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div>
+                            <label for="mobileNumber" class="block text-sm sm:text-base font-bold text-gray-800 mb-2">
+                                موبائيل نمبر <span class="text-[#c0262d]">*</span>
+                            </label>
+                            <input 
+                                type="tel" 
+                                id="mobileNumber" 
+                                dir="ltr"
+                                required
+                                maxlength="12"
+                                oninput="formatPhone(this)"
+                                placeholder="03xx xxxxxxx"
+                                class="w-full px-4 py-3.5 rounded-xl border border-gray-300 text-gray-800 placeholder-gray-400 text-left focus:outline-none focus:border-[#0d5c2f] focus:ring-2 focus:ring-[#0d5c2f]/20 transition text-base font-mono">
+                        </div>
+
+                        <div>
+                            <label for="emailAddress" class="block text-sm sm:text-base font-bold text-gray-800 mb-2">
+                                اي ميل <span class="text-gray-500 font-normal text-sm">(اختياري)</span>
+                            </label>
+                            <input 
+                                type="email" 
+                                id="emailAddress" 
+                                dir="ltr"
+                                placeholder="name@example.com"
+                                class="w-full px-4 py-3.5 rounded-xl border border-gray-300 text-gray-800 placeholder-gray-400 text-left focus:outline-none focus:border-[#0d5c2f] focus:ring-2 focus:ring-[#0d5c2f]/20 transition text-base font-sans">
+                        </div>
+                    </div>
+
+                    <!-- CNIC Number -->
+                    <div>
+                        <label for="cnicNumber" class="block text-sm sm:text-base font-bold text-gray-800 mb-2">
+                            شناختي ڪارڊ نمبر / CNIC <span class="text-[#c0262d]">*</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            id="cnicNumber" 
+                            dir="ltr"
+                            required
+                            maxlength="15"
+                            oninput="formatCNIC(this)"
+                            placeholder="4xxxx-xxxxxxx-x"
+                            class="w-full px-4 py-3.5 rounded-xl border border-gray-300 text-gray-800 placeholder-gray-400 text-left focus:outline-none focus:border-[#0d5c2f] focus:ring-2 focus:ring-[#0d5c2f]/20 transition text-base font-mono">
+                    </div>
+
+                    <!-- Designation & District Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <!-- Designation -->
+                        <div>
+                            <label for="designation" class="block text-sm sm:text-base font-bold text-gray-800 mb-2">
+                                عهدو / Designation <span class="text-[#c0262d]">*</span>
+                            </label>
+                            <select 
+                                id="designation" 
+                                required
+                                class="w-full px-4 py-3.5 rounded-xl border border-gray-300 text-gray-800 bg-white focus:outline-none focus:border-[#0d5c2f] focus:ring-2 focus:ring-[#0d5c2f]/20 transition text-base">
+                                <option value="Member" selected>Member (ميمبر)</option>
+                                <option value="President">President (صدر)</option>
+                                <option value="Vice President">Vice President (نائب صدر)</option>
+                                <option value="General Secretary">General Secretary (جنرل سيڪريٽري)</option>
+                                <option value="Joint Secretary">Joint Secretary (جوائنٽ سيڪريٽري)</option>
+                                <option value="Information Secretary">Information Secretary (اطلاعات سيڪريٽري)</option>
+                                <option value="Finance Secretary">Finance Secretary (فنانس سيڪريٽري)</option>
+                                <option value="Youth Wing">Youth Wing (يوٿ ونگ)</option>
+                                <option value="Coordinator">Coordinator (ڪوآرڊينيٽر)</option>
+                            </select>
+                        </div>
+
+                        <!-- District -->
+                        <div>
+                            <label for="district" class="block text-sm sm:text-base font-bold text-gray-800 mb-2">
+                                ضلعو / District <span class="text-[#c0262d]">*</span>
+                            </label>
+                            <select 
+                                id="district" 
+                                required
+                                class="w-full px-4 py-3.5 rounded-xl border border-gray-300 text-gray-800 bg-white focus:outline-none focus:border-[#0d5c2f] focus:ring-2 focus:ring-[#0d5c2f]/20 transition text-base">
+                                <option value="">ضلعو چونڊيو...</option>
+                                <option value="Shaheed Benazirabad">Shaheed Benazirabad (نوابشاهه)</option>
+                                <option value="Karachi">Karachi (ڪراچي)</option>
+                                <option value="Hyderabad">Hyderabad (حيدرآباد)</option>
+                                <option value="Sukkur">Sukkur (سکر)</option>
+                                <option value="Larkana">Larkana (لاڙڪاڻو)</option>
+                                <option value="Mirpurkhas">Mirpurkhas (ميرپورخاص)</option>
+                                <option value="Sanghar">Sanghar (سانگهڙ)</option>
+                                <option value="Naushehro Feroze">Naushehro Feroze (نوشهروفيروز)</option>
+                                <option value="Khairpur">Khairpur (خيرپور ميرس)</option>
+                                <option value="Badin">Badin (بدين)</option>
+                                <option value="Thatta">Thatta (ٺٽو)</option>
+                                <option value="Sujawal">Sujawal (سجاول)</option>
+                                <option value="Dadu">Dadu (دادو)</option>
+                                <option value="Jamshoro">Jamshoro (ڄامشورو)</option>
+                                <option value="Ghotki">Ghotki (گهوٽڪي)</option>
+                                <option value="Jacobabad">Jacobabad (جيڪب آباد)</option>
+                                <option value="Shikarpur">Shikarpur (شڪارپور)</option>
+                                <option value="Kashmore">Kashmore (ڪشمور)</option>
+                                <option value="Qambar Shahdadkot">Qambar Shahdadkot (قمبر شهدادڪوٽ)</option>
+                                <option value="Umerkot">Umerkot (عمرڪوٽ)</option>
+                                <option value="Tharparkar">Tharparkar (ٿرپارڪر)</option>
+                                <option value="Tando Allahyar">Tando Allahyar (ٽنڊو الهيار)</option>
+                                <option value="Tando Muhammad Khan">Tando Muhammad Khan (ٽنڊو محمد خان)</option>
+                                <option value="Matiari">Matiari (مٽياري)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Full Address -->
+                    <div>
+                        <label for="fullAddress" class="block text-sm sm:text-base font-bold text-gray-800 mb-2">
+                            مڪمل پتو / Address <span class="text-[#c0262d]">*</span>
+                        </label>
+                        <textarea 
+                            id="fullAddress" 
+                            rows="2" 
+                            required
+                            placeholder="پنهنجو مڪمل پتو، ڳوٺ، تعلقي يا پاڙي سميت لکو"
+                            class="w-full px-4 py-3 rounded-xl border border-gray-300 text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#0d5c2f] focus:ring-2 focus:ring-[#0d5c2f]/20 transition text-base"></textarea>
+                    </div>
+
+                    <!-- Photo Upload -->
+                    <div>
+                        <label class="block text-sm sm:text-base font-bold text-gray-800 mb-2">
+                            تصوير اپلوڊ ڪريو / Upload Photo <span class="text-[#c0262d]">*</span>
+                            <span class="text-gray-500 font-normal text-xs mr-1">(ڊجيٽل شناختي ڪارڊ لاءِ صاف تصوير)</span>
+                        </label>
+                        <div class="flex items-center gap-4 p-4 rounded-xl border-2 border-dashed border-gray-300 bg-gray-50 hover:border-[#0d5c2f] transition">
+                            <img 
+                                id="photoPreview" 
+                                src="https://placehold.co/120x120/e8f3ed/0d5c2f?text=تصوير" 
+                                alt="تصوير" 
+                                class="w-20 h-20 rounded-xl object-cover border-2 border-[#e5c158] shadow-xs shrink-0 bg-white">
+                            <div class="flex-1 min-w-0">
+                                <input 
+                                    type="file" 
+                                    id="photoInput" 
+                                    accept="image/*" 
+                                    onchange="handlePhotoUpload(event)"
+                                    class="block w-full text-xs sm:text-sm text-gray-600 file:ml-3 file:py-2.5 file:px-4 file:rounded-xl file:border-0 file:text-xs sm:file:text-sm file:font-bold file:bg-[#0d5c2f] file:text-white hover:file:bg-[#083d1f] cursor-pointer">
+                                <p class="text-xs text-gray-500 mt-1.5">مهرباني ڪري سڌي منهن واري پاسپورٽ سائيز تصوير چونڊيو.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="pt-3">
+                        <button 
+                            type="submit" 
+                            class="w-full py-4 px-6 rounded-xl bg-[#0d5c2f] hover:bg-[#083d1f] active:scale-[0.99] text-white font-bold text-base sm:text-lg shadow-lg shadow-[#0d5c2f]/25 transition-all cursor-pointer flex items-center justify-center gap-2">
+                            <span>درخواست جمع ڪريو</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Application Status Checker -->
+                <div class="mt-8 pt-6 border-t border-gray-200">
+                    <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
+                        <h4 class="text-sm sm:text-base font-bold text-gray-800">درخواست جو اسٽيٽس چيڪ ڪريو ۽ ڪارڊ ڊائونلوڊ ڪريو:</h4>
+                        <button type="button" onclick="openCardModal('NTP-0948')" class="text-xs font-bold text-[#0d5c2f] underline hover:text-[#c0262d] cursor-pointer">
+                            نموني جو ڪارڊ ڏسو (NTP-0948)
+                        </button>
+                    </div>
+                    <div class="flex gap-2">
+                        <input 
+                            type="text" 
+                            id="trackInput" 
+                            dir="ltr"
+                            placeholder="ID (NTP-0948) يا CNIC يا موبائيل نمبر لکو"
+                            class="flex-1 px-3.5 py-2.5 rounded-xl border border-gray-300 text-sm text-left focus:outline-none focus:border-[#0d5c2f]">
+                        <button 
+                            type="button"
+                            onclick="checkApplicationStatus()"
+                            class="px-5 py-2.5 rounded-xl bg-gray-800 hover:bg-gray-900 text-white text-sm font-bold transition cursor-pointer">
+                            چيڪ ڪريو
+                        </button>
+                    </div>
+                    <div id="trackResult" class="hidden mt-3 p-3.5 rounded-xl text-sm"></div>
+                </div>
+            </section>
+
+            <!-- ==================== TAB 2: CENTRAL ADMIN PANEL ==================== -->
+            <section id="sectionAdmin" class="hidden p-5 sm:p-8">
+                
+                <!-- Admin Login Box -->
+                <div id="adminLoginView" class="max-w-sm mx-auto py-8 text-center">
+                    <div class="w-16 h-16 rounded-2xl bg-[#e8f3ed] text-[#0d5c2f] flex items-center justify-center mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                        </svg>
+                    </div>
+                    <h2 class="text-xl sm:text-2xl font-extrabold text-[#0d5c2f] mb-1">مرڪزي ايڊمن لاگ ان</h2>
+                    <p class="text-sm text-gray-500 mb-6">درخواستون ڏسڻ، منظور ڪرڻ ۽ ڊجيٽل ڪارڊ جاري ڪرڻ لاءِ ايڊمن PIN ڪوڊ داخل ڪريو.</p>
+
+                    <form onsubmit="handleAdminLogin(event)" class="space-y-4">
+                        <div>
+                            <input 
+                                type="password" 
+                                id="adminPinInput" 
+                                dir="ltr"
+                                maxlength="10"
+                                required
+                                placeholder="••••"
+                                class="w-full px-4 py-3.5 rounded-xl border border-gray-300 text-center text-xl tracking-[0.5em] font-bold focus:outline-none focus:border-[#0d5c2f] focus:ring-2 focus:ring-[#0d5c2f]/20">
+                            <p class="text-xs text-gray-400 mt-2">ڊيفالٽ ايڊمن پِن ڪوڊ: <span dir="ltr" class="font-mono font-bold text-[#0d5c2f]">1234</span></p>
+                        </div>
+                        <button 
+                            type="submit" 
+                            class="w-full py-3.5 px-6 rounded-xl bg-[#0d5c2f] hover:bg-[#083d1f] text-white font-bold text-base shadow-md transition cursor-pointer">
+                            پينل کوليو
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Admin Dashboard View -->
+                <div id="adminDashboardView" class="hidden space-y-6">
+                    <!-- Top Header & Controls -->
+                    <div class="flex flex-wrap items-center justify-between gap-3 border-b border-gray-200 pb-4">
+                        <div>
+                            <h2 class="text-xl sm:text-2xl font-extrabold text-[#0d5c2f]">مرڪزي ايڊمن ڊيشبورڊ</h2>
+                            <p class="text-xs sm:text-sm text-gray-500">NINDHANAKI TEHREEK · ميمبرشپ ۽ ڊجيٽل ڪارڊ سسٽم</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button 
+                                onclick="exportApplicationsCSV()" 
+                                class="px-3 py-2 rounded-xl bg-[#e8f3ed] text-[#0d5c2f] hover:bg-[#d5eadf] text-xs sm:text-sm font-bold transition cursor-pointer">
+                                CSV ڊائونلوڊ
+                            </button>
+                            <button 
+                                onclick="openPinModal()" 
+                                class="px-3 py-2 rounded-xl bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs sm:text-sm font-bold transition cursor-pointer">
+                                PIN بدلايو
+                            </button>
+                            <button 
+                                onclick="handleAdminLogout()" 
+                                class="px-3 py-2 rounded-xl bg-red-50 text-[#c0262d] hover:bg-red-100 text-xs sm:text-sm font-bold transition cursor-pointer">
+                                لاگ آئوٽ
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Statistics Summary Cards -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                        <div class="p-3.5 rounded-2xl bg-gray-50 border border-gray-200 text-center">
+                            <span class="block text-xs text-gray-500 font-semibold mb-1">ڪل درخواستون</span>
+                            <span id="statTotal" class="text-2xl font-extrabold text-gray-800">0</span>
+                        </div>
+                        <div class="p-3.5 rounded-2xl bg-emerald-50 border border-emerald-200 text-center">
+                            <span class="block text-xs text-emerald-700 font-semibold mb-1">منظور ٿيل</span>
+                            <span id="statApproved" class="text-2xl font-extrabold text-[#0d5c2f]">0</span>
+                        </div>
+                        <div class="p-3.5 rounded-2xl bg-amber-50 border border-amber-200 text-center">
+                            <span class="block text-xs text-amber-700 font-semibold mb-1">التوا هيٺ</span>
+                            <span id="statPending" class="text-2xl font-extrabold text-amber-600">0</span>
+                        </div>
+                        <div class="p-3.5 rounded-2xl bg-red-50 border border-red-200 text-center">
+                            <span class="block text-xs text-red-700 font-semibold mb-1">رد ٿيل</span>
+                            <span id="statRejected" class="text-2xl font-extrabold text-[#c0262d]">0</span>
+                        </div>
+                    </div>
+
+                    <!-- Search & Status Filter -->
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <input 
+                            type="text" 
+                            id="adminSearchInput" 
+                            oninput="renderAdminList()"
+                            placeholder="نالو، شناختي ڪارڊ، ID نمبر، موبائيل يا ضلعي ذريعي ڳوليو..."
+                            class="flex-1 px-4 py-2.5 rounded-xl border border-gray-300 text-sm focus:outline-none focus:border-[#0d5c2f]">
+                        <select 
+                            id="adminFilterStatus" 
+                            onchange="renderAdminList()"
+                            class="px-4 py-2.5 rounded-xl border border-gray-300 text-sm bg-white focus:outline-none focus:border-[#0d5c2f]">
+                            <option value="ALL">سڀ درخواستون</option>
+                            <option value="PENDING">التوا هيٺ (Pending)</option>
+                            <option value="APPROVED">منظور ٿيل (Approved)</option>
+                            <option value="REJECTED">رد ٿيل (Rejected)</option>
+                        </select>
+                    </div>
+
+                    <!-- Applications List -->
+                    <div id="adminApplicationsList" class="space-y-4"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center text-white/80 text-xs pb-6 px-4">
+        <p>© 2026 NINDHANAKI TEHREEK · آن لائين ميمبرشپ پورٽل · سمورا حق محفوظ آهن</p>
+    </footer>
+
+    <!-- ==================== ADMIN EDIT MEMBER DETAILS MODAL ==================== -->
+    <div id="editMemberModal" class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border-t-4 border-[#0d5c2f] space-y-4">
+            <div class="flex items-center justify-between border-b border-gray-200 pb-2">
+                <h3 class="text-lg font-extrabold text-[#0d5c2f]">ميمبر ڪارڊ جا تفصيل تبديل ڪريو</h3>
+                <button onclick="document.getElementById('editMemberModal').classList.add('hidden')" class="text-gray-400 hover:text-gray-700 text-xl font-bold cursor-pointer">&times;</button>
+            </div>
+            <input type="hidden" id="editAppId">
+            <div class="space-y-3 text-sm">
+                <div>
+                    <label class="block font-bold text-gray-700 mb-1">پورو نالو (Full Name)</label>
+                    <input type="text" id="editFullName" class="w-full px-3.5 py-2.5 rounded-xl border border-gray-300 focus:outline-none focus:border-[#0d5c2f]">
+                </div>
+                <div>
+                    <label class="block font-bold text-gray-700 mb-1">عهدو (Designation)</label>
+                    <input type="text" id="editDesignation" placeholder="President / Member / Coordinator" class="w-full px-3.5 py-2.5 rounded-xl border border-gray-300 focus:outline-none focus:border-[#0d5c2f]">
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block font-bold text-gray-700 mb-1">ڪارڊ جو قسم (Card Type)</label>
+                        <select id="editCardType" class="w-full px-3.5 py-2.5 rounded-xl border border-gray-300 bg-white focus:outline-none focus:border-[#0d5c2f]">
+                            <option value="OFFICIAL">OFFICIAL</option>
+                            <option value="MEMBER">MEMBER</option>
+                            <option value="EXECUTIVE">EXECUTIVE</option>
+                            <option value="YOUTH WING">YOUTH WING</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block font-bold text-gray-700 mb-1">مدت ختم ٿيڻ (Expiry Date)</label>
+                        <input type="text" id="editExpiryDate" dir="ltr" placeholder="31-12-2027" class="w-full px-3.5 py-2.5 rounded-xl border border-gray-300 font-mono focus:outline-none focus:border-[#0d5c2f]">
+                    </div>
+                </div>
+            </div>
+            <div class="flex gap-2 pt-2">
+                <button onclick="saveEditedMember()" class="flex-1 py-2.5 rounded-xl bg-[#0d5c2f] hover:bg-[#083d1f] text-white font-bold text-sm cursor-pointer">
+                    تبديليون محفوظ ڪريو
+                </button>
+                <button onclick="document.getElementById('editMemberModal').classList.add('hidden')" class="px-4 py-2.5 rounded-xl bg-gray-100 text-gray-700 font-bold text-sm cursor-pointer">
+                    بند ڪريو
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== CUSTOM MESSAGE / TOAST MODAL ==================== -->
+    <div id="customModal" class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border-t-4 border-[#0d5c2f] text-center space-y-4">
+            <div id="modalIcon" class="w-14 h-14 rounded-full bg-[#e8f3ed] text-[#0d5c2f] flex items-center justify-center mx-auto">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>
+            </div>
+            <h3 id="modalTitle" class="text-xl font-extrabold text-gray-900">اطلاع</h3>
+            <div id="modalBody" class="text-sm text-gray-600 leading-relaxed"></div>
+            <div id="modalActions" class="flex items-center justify-center gap-3 pt-2">
+                <button onclick="closeModal()" class="px-6 py-2.5 rounded-xl bg-[#0d5c2f] text-white font-bold text-sm hover:bg-[#083d1f] transition cursor-pointer">
+                    ٺيڪ آهي
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== EXACT DIGITAL IDENTITY CARD MODAL (FRONT & BACK) ==================== -->
+    <div id="cardModal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-xs flex items-center justify-center p-2 sm:p-4 overflow-y-auto">
+        <div class="bg-gray-900 border border-gray-700 rounded-2xl max-w-4xl w-full p-4 sm:p-6 shadow-2xl space-y-4 my-auto text-white">
+            
+            <!-- Modal Top Bar -->
+            <div class="flex flex-wrap items-center justify-between gap-3 border-b border-gray-700 pb-3 no-print">
+                <div>
+                    <h3 class="text-base sm:text-lg font-extrabold text-[#f5d000]">NTP ڊجيٽل شناختي ڪارڊ (فرنٽ ۽ بيڪ)</h3>
+                    <p class="text-xs text-gray-400">Nadhanki Tehreek Party · Official Digital Identity Card</p>
+                </div>
+
+                <!-- View Mode Toggle + Close -->
+                <div class="flex items-center gap-2">
+                    <div class="inline-flex rounded-xl bg-gray-800 p-1 border border-gray-700 text-xs font-bold">
+                        <button id="btnViewBoth" onclick="setCardViewMode('both')" class="px-3 py-1.5 rounded-lg bg-[#f5d000] text-black transition cursor-pointer">
+                            ٻئي پاسا (Front & Back)
+                        </button>
+                        <button id="btnViewFront" onclick="setCardViewMode('front')" class="px-3 py-1.5 rounded-lg text-gray-300 hover:text-white transition cursor-pointer">
+                            فرنٽ
+                        </button>
+                        <button id="btnViewBack" onclick="setCardViewMode('back')" class="px-3 py-1.5 rounded-lg text-gray-300 hover:text-white transition cursor-pointer">
+                            بيڪ
+                        </button>
+                    </div>
+                    <button onclick="closeCardModal()" class="w-8 h-8 rounded-lg bg-gray-800 hover:bg-red-600 text-white flex items-center justify-center text-lg font-bold cursor-pointer">&times;</button>
+                </div>
+            </div>
+
+            <!-- Cards Container (Side-by-Side on Desktop, Stacked/Scrollable on Mobile) -->
+            <div class="overflow-x-auto py-2 flex justify-center">
+                <div id="printableCardsWrapper" class="flex flex-col md:flex-row items-center justify-center gap-6 p-2">
+                    
+                    <!-- ==================== CARD 1: FRONT SIDE ==================== -->
+                    <div id="ntpFrontCard" class="ntp-card ntp-silk-bg">
+                        <!-- Top Lanyard Slot -->
+                        <div class="ntp-lanyard-slot"></div>
+
+                        <!-- Bright Yellow Full-Width Top Banner -->
+                        <div class="w-full bg-[#f5d000] py-1 text-center shadow-xs z-10">
+                            <span class="text-black font-black text-[15px] tracking-wider uppercase block leading-tight">
+                                DIGITAL IDENTITY CARD
+                            </span>
+                        </div>
+
+                        <!-- Red Silk Header with Huge Gold NTP & Serif Party Name -->
+                        <div class="text-center pt-1 pb-2 px-3 z-10 relative">
+                            <div class="text-[64px] font-black leading-[0.9] tracking-tight text-[#f5d000]" style="text-shadow: 2px 3px 0px #420000, 0 4px 10px rgba(0,0,0,0.6);">
+                                NTP
+                            </div>
+                            <div class="font-cardSerif font-bold text-[19px] text-[#fff6d6] tracking-wide mt-0.5" style="text-shadow: 1px 2px 3px rgba(0,0,0,0.85);">
+                                Nadhanki Tehreek Party
+                            </div>
+                            <!-- Thin Gold Accent Line under title -->
+                            <div class="w-48 h-[1.5px] bg-gradient-to-r from-transparent via-[#f5d000] to-transparent mx-auto mt-1"></div>
+                        </div>
+
+                        <!-- Lower Salmon-Red Circuit Board Section with Curved Gold Wave Top -->
+                        <div class="ntp-front-lower">
+                            <!-- Curved Gold & Crimson SVG Wave Divider -->
+                            <svg class="w-full h-9 -mt-6 block relative z-10 pointer-events-none" viewBox="0 0 360 40" preserveAspectRatio="none">
+                                <path d="M0,4 Q180,38 360,4 L360,40 L0,40 Z" fill="#df7878"/>
+                                <path d="M0,4 Q180,38 360,4" fill="none" stroke="#e5c158" stroke-width="3.5"/>
+                            </svg>
+
+                            <!-- Circuit Traces SVG Background (Left & Right) -->
+                            <svg class="absolute inset-0 w-full h-full opacity-35 pointer-events-none" viewBox="0 0 360 360" fill="none">
+                                <!-- Left PCB traces -->
+                                <path d="M0 30 H45 L60 45 V95 L40 115 H0" stroke="#7a0808" stroke-width="1.5"/>
+                                <path d="M0 55 H32 L45 68 V130 L25 150 H0" stroke="#7a0808" stroke-width="1.5"/>
+                                <path d="M0 85 H20 L35 100 V175" stroke="#7a0808" stroke-width="1.5"/>
+                                <circle cx="60" cy="45" r="3" fill="#7a0808"/><circle cx="45" cy="68" r="3" fill="#7a0808"/><circle cx="35" cy="175" r="3" fill="#7a0808"/>
+                                <!-- Right PCB traces -->
+                                <path d="M360 30 H315 L300 45 V95 L320 115 H360" stroke="#7a0808" stroke-width="1.5"/>
+                                <path d="M360 55 H328 L315 68 V130 L335 150 H360" stroke="#7a0808" stroke-width="1.5"/>
+                                <path d="M360 85 H340 L325 100 V175" stroke="#7a0808" stroke-width="1.5"/>
+                                <circle cx="300" cy="45" r="3" fill="#7a0808"/><circle cx="315" cy="68" r="3" fill="#7a0808"/><circle cx="325" cy="175" r="3" fill="#7a0808"/>
+                            </svg>
+
+                            <!-- Photo Row + Left Gold Stag Shield + Right Chip -->
+                            <div class="relative z-20 flex items-center justify-between px-4 -mt-6">
+                                <!-- Left Side: Red Mini Shield + Gold Trimmed Maroon Stag Shield Emblem -->
+                                <div class="flex items-center gap-1.5">
+                                    <!-- Small Red/Pink Shield -->
+                                    <svg class="w-5 h-6 opacity-80" viewBox="0 0 24 28" fill="none">
+                                        <path d="M12 2L3 6V13C3 19.5 7 24.5 12 26C17 24.5 21 19.5 21 13V6L12 2Z" fill="#9e1919" stroke="#f5d000" stroke-width="1.5"/>
+                                        <path d="M12 2V26M3 13H21" stroke="#f3a6a6" stroke-width="1"/>
+                                    </svg>
+                                    <!-- Main Gold Shield Emblem with Stag/Deer -->
+                                    <div class="w-12 h-14 relative flex items-center justify-center drop-shadow-md">
+                                        <svg viewBox="0 0 60 70" class="w-full h-full">
+                                            <defs>
+                                                <linearGradient id="goldShieldGrad" x1="0" y1="0" x2="1" y2="1">
+                                                    <stop offset="0%" stop-color="#fff0a6"/>
+                                                    <stop offset="50%" stop-color="#d4af37"/>
+                                                    <stop offset="100%" stop-color="#8a6508"/>
+                                                </linearGradient>
+                                            </defs>
+                                            <path d="M30 3 L54 12 V33 C54 50 43 61 30 67 C17 61 6 50 6 33 V12 Z" fill="url(#goldShieldGrad)"/>
+                                            <path d="M30 7 L50 15 V33 C50 47 40 57 30 62 C20 57 10 47 10 33 V15 Z" fill="#5e120d"/>
+                                            <!-- Wreath & Stag Silhouette -->
+                                            <path d="M18 46 C14 38 15 26 21 21 M42 46 C46 38 45 26 39 21" stroke="#f3d06b" stroke-width="2" fill="none" stroke-linecap="round"/>
+                                            <!-- Stag Head & Antlers -->
+                                            <path d="M30 44 L26 34 L30 29 L34 34 Z" fill="#f3d06b"/>
+                                            <path d="M27 29 L22 21 M25 25 L21 25 M26 23 L25 19 M33 29 L38 21 M35 25 L39 25 M34 23 L35 19" stroke="#f3d06b" stroke-width="1.8" stroke-linecap="round"/>
+                                        </svg>
+                                    </div>
+                                </div>
+
+                                <!-- Center Member Portrait Photo Box -->
+                                <div class="w-[116px] h-[126px] border-[3px] border-[#e5c158] shadow-lg bg-white overflow-hidden shrink-0">
+                                    <img id="frontCardPhoto" src="" alt="Member" class="w-full h-full object-cover">
+                                </div>
+
+                                <!-- Right Side: Micro-Chip Circuit Graphic -->
+                                <div class="w-14 h-14 flex items-center justify-center opacity-65">
+                                    <svg viewBox="0 0 60 60" class="w-12 h-12" fill="none">
+                                        <rect x="16" y="16" width="28" height="28" rx="3" stroke="#7a0808" stroke-width="2" fill="#c95b5b"/>
+                                        <rect x="22" y="22" width="16" height="16" stroke="#7a0808" stroke-width="1.5"/>
+                                        <path d="M22 10V16M30 10V16M38 10V16M22 44V50M30 44V50M38 44V50M10 22H16M10 30H16M10 38H16M44 22H50M44 30H50M44 38H50" stroke="#7a0808" stroke-width="2"/>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <!-- Bold White Member Name with Crisp Black Outline -->
+                            <div class="px-2 pt-2 pb-1.5 text-center relative z-20">
+                                <h2 id="frontCardName" class="ntp-text-outline font-black text-[21px] leading-tight uppercase tracking-tight truncate">
+                                    MASHOOQ ALI ZARDARI
+                                </h2>
+                            </div>
+
+                            <!-- Solid Black Horizontal Bar: DESIGNATION & DISTRICT -->
+                            <div class="w-full bg-[#111111] py-1.5 px-3 text-center relative z-20 shadow-inner">
+                                <div class="text-[13.5px] font-extrabold leading-snug">
+                                    <span class="text-[#f5d000]">DESIGNATION:</span>
+                                    <span id="frontCardDesignation" class="text-white ml-1">President</span>
+                                </div>
+                                <div class="text-[13.5px] font-extrabold leading-snug">
+                                    <span class="text-[#f5d000]">DISTRICT:</span>
+                                    <span id="frontCardDistrict" class="text-white ml-1">Shaheed Benazirabad</span>
+                                </div>
+                            </div>
+
+                            <!-- Details + Chairman Blue Signature Row -->
+                            <div class="px-3.5 pt-2 pb-1.5 flex items-end justify-between relative z-20">
+                                <!-- Left Column: ID NO, CARD TYPE, EXPIRY DATE -->
+                                <div class="space-y-0.5 text-[12.5px] font-extrabold leading-tight">
+                                    <div class="flex items-center">
+                                        <span class="ntp-yellow-outline w-[92px] inline-block">ID NO:</span>
+                                        <span id="frontCardId" class="ntp-text-outline font-mono">NTP-0948</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <span class="ntp-yellow-outline w-[92px] inline-block">CARD TYPE:</span>
+                                        <span id="frontCardType" class="ntp-text-outline">OFFICIAL</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <span class="ntp-yellow-outline w-[92px] inline-block">EXPIRY DATE:</span>
+                                        <span id="frontCardExpiry" class="ntp-text-outline font-mono">31-12-2027</span>
+                                    </div>
+                                </div>
+
+                                <!-- Right Column: Blue Cursive Signature "Sajjad" + CHAIRMAN -->
+                                <div class="text-center leading-none pr-0.5">
+                                    <div class="font-signature text-[27px] text-[#1b368c] -rotate-6 select-none drop-shadow-xs" style="line-height: 0.85;">
+                                        Sajjad
+                                    </div>
+                                    <div class="text-[10px] font-black text-black tracking-wide mt-1">CHAIRMAN</div>
+                                    <div class="text-[9.5px] font-bold text-black">Sajjad</div>
+                                </div>
+                            </div>
+
+                            <!-- Bottom White Footer Strip with Barcode & QR Code -->
+                            <div class="mt-auto mx-3 mb-2.5 bg-white px-2.5 py-1.5 rounded-xs flex items-center justify-between gap-2 relative z-20 shadow-xs">
+                                <!-- Left: Code-128 Style Barcode + 4NTP-XXXX -->
+                                <div class="flex-1 flex flex-col items-center justify-center">
+                                    <div id="frontBarcodeSvg" class="w-full h-9"></div>
+                                    <span id="frontBarcodeText" class="text-[11px] font-bold text-black font-mono tracking-widest leading-none mt-0.5">
+                                        4NTP-0948
+                                    </span>
+                                </div>
+
+                                <!-- Right: Crisp QR Code -->
+                                <div id="frontQrSvg" class="w-11 h-11 shrink-0 bg-white"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ==================== CARD 2: BACK SIDE ==================== -->
+                    <div id="ntpBackCard" class="ntp-card ntp-silk-bg">
+                        <!-- Top Lanyard Slot -->
+                        <div class="ntp-lanyard-slot"></div>
+
+                        <!-- Terms & Conditions Header on Red Silk -->
+                        <div class="px-4 pt-0.5 pb-2 text-center relative z-20">
+                            <h3 class="text-[#f5d000] font-black text-[19px] tracking-wide leading-tight drop-shadow-md">
+                                TERMS &amp; CONDITIONS
+                            </h3>
+                            <p class="text-[#f5d000] font-bold text-[12.5px] leading-tight mb-2">
+                                (or RULES &amp; REGULATIONS)
+                            </p>
+
+                            <div class="space-y-2 text-white font-bold text-[10.8px] leading-[1.32]" style="text-shadow: 0 1px 2px rgba(0,0,0,0.9);">
+                                <p>
+                                    This card is the official property of the Nadhanki Tehreek Party (NTP). It is non-transferable and must be surrendered upon demand or resignation.
+                                </p>
+                                <p>
+                                    Use of this card is governed by the party's official constitution and guidelines.
+                                </p>
+                                <p>
+                                    If found, please return to the nearest NTP Party Office.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Lower Deep Crimson Section with Curved Gold Divider -->
+                        <div class="ntp-back-lower">
+                            <!-- Curved Gold Divider -->
+                            <svg class="w-full h-7 -mt-4 block relative z-10 pointer-events-none" viewBox="0 0 360 30" preserveAspectRatio="none">
+                                <path d="M0,2 Q180,28 360,2 L360,30 L0,30 Z" fill="#750707"/>
+                                <path d="M0,2 Q180,28 360,2" fill="none" stroke="#e5c158" stroke-width="3"/>
+                            </svg>
+
+                            <!-- Subtle Circuit Pattern Background -->
+                            <svg class="absolute inset-0 w-full h-full opacity-20 pointer-events-none" viewBox="0 0 360 350" fill="none">
+                                <path d="M0 40 H40 L55 55 V120 L30 145 H0" stroke="#ff6b6b" stroke-width="1.5"/>
+                                <path d="M360 40 H320 L305 55 V120 L330 145 H360" stroke="#ff6b6b" stroke-width="1.5"/>
+                                <path d="M0 240 Q90 210 180 245 T360 240" stroke="#ff6b6b" stroke-width="1"/>
+                                <path d="M0 255 Q90 225 180 260 T360 255" stroke="#ff6b6b" stroke-width="1"/>
+                            </svg>
+
+                            <!-- Card Holder's Statement -->
+                            <div class="px-4 pt-1 text-center relative z-20">
+                                <h4 class="text-[#f5d000] font-extrabold text-[13px] tracking-wide uppercase">
+                                    CARD HOLDER’S STATEMENT
+                                </h4>
+                                <p class="text-white font-semibold text-[10.5px] leading-snug mt-0.5">
+                                    I hereby pledge to uphold the values, vision, and discipline of the Nadhanki Tehreek Party.
+                                </p>
+
+                                <!-- Dynamic Holder Information -->
+                                <div class="mt-2 space-y-0.5 text-white font-bold text-[11px] leading-tight">
+                                    <div>Holder: <span id="backCardName" class="uppercase">MASHOOQ ALI ZARDARI</span></div>
+                                    <div>Designation: <span id="backCardDesigDist">President, District Shaheed Benazirabad</span></div>
+                                    <div>ID No.: <span id="backCardId" class="font-mono">NTP-0948</span></div>
+                                </div>
+                            </div>
+
+                            <!-- 4-Item Security & Verification Row -->
+                            <div class="px-3.5 pt-2.5 pb-1.5 flex items-start justify-between gap-2 relative z-20">
+                                <!-- 1. Silver Holographic Metallic Badge -->
+                                <div class="ntp-holo-badge w-[68px] h-[68px] rounded-xl flex flex-col items-center justify-center text-center p-1 shrink-0">
+                                    <span class="text-[8px] font-black text-gray-800 tracking-wider leading-none">OFFICIAL</span>
+                                    <span class="text-[19px] font-black text-gray-700 leading-tight tracking-tight" style="text-shadow: 0 1px 0 rgba(255,255,255,0.8);">NTP</span>
+                                    <span class="text-[7.5px] font-extrabold text-gray-800 tracking-tight leading-none">SECURE ID</span>
+                                    <svg class="w-3.5 h-3.5 mt-0.5 text-gray-700" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/>
+                                    </svg>
+                                </div>
+
+                                <!-- 2. Circular Maroon & White Rosette Stamp -->
+                                <div class="w-[68px] h-[68px] shrink-0 flex items-center justify-center relative">
+                                    <svg viewBox="0 0 100 100" class="w-full h-full">
+                                        <circle cx="50" cy="50" r="45" fill="none" stroke="#f3c6c6" stroke-width="1.5" stroke-dasharray="3 2"/>
+                                        <circle cx="50" cy="50" r="40" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+                                        <circle cx="50" cy="50" r="35" fill="#4f0303" stroke="#f3c6c6" stroke-width="1"/>
+                                    </svg>
+                                    <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-1">
+                                        <span class="text-white font-extrabold text-[8.5px] tracking-wide leading-tight">CHAIRMAN</span>
+                                        <span class="text-white/85 text-[6px] leading-tight mt-0.5">No name, no signature</span>
+                                    </div>
+                                </div>
+
+                                <!-- 3. White Rectangular Barcode Box -->
+                                <div class="w-[74px] h-[58px] bg-white p-1 rounded-xs flex items-center justify-center shrink-0">
+                                    <div id="backBarcodeSvg" class="w-full h-full"></div>
+                                </div>
+
+                                <!-- 4. White Square QR Code Box + SCAN FOR VERIFICATION -->
+                                <div class="flex flex-col items-center shrink-0">
+                                    <div id="backQrSvg" class="w-[58px] h-[58px] bg-white p-1 rounded-xs"></div>
+                                    <span class="text-[6.2px] font-bold text-white tracking-tighter mt-1 uppercase whitespace-nowrap">
+                                        SCAN FOR VERIFICATION
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Party HQ Office Contact Details -->
+                            <div class="px-3 pt-1 pb-1.5 text-center relative z-20 text-[10.5px] leading-[1.35] font-bold">
+                                <div class="text-[#f5d000] font-extrabold">Party HQ Office Address:</div>
+                                <div class="text-white">NTP Central Secretariat, Karachi/Sindh, Pakistan</div>
+                                <div>
+                                    <span class="text-[#f5d000]">Email:</span>
+                                    <span class="text-white ml-1">info@ntp.org.pk</span>
+                                </div>
+                                <div>
+                                    <span class="text-[#f5d000]">Web:</span>
+                                    <span class="text-white ml-1">www.ntp.org.pk</span>
+                                </div>
+                                <div>
+                                    <span class="text-[#f5d000]">Official helpline:</span>
+                                    <span class="text-white ml-1">+92 312 5046630</span>
+                                </div>
+                                <div class="text-white pl-16">+92 301 3541960</div>
+                            </div>
+
+                            <!-- Bottom Bright Yellow Legal Warning Footer Bar -->
+                            <div class="mt-auto w-full bg-[#f5d000] py-1.5 px-3 text-center relative z-20">
+                                <p class="text-black font-black text-[8.8px] leading-[1.2] uppercase tracking-tight">
+                                    ANY UNAUTHORIZED USE, COPYING, OR ALTERATION OF THIS CARD IS A STRICT OFFENSE AND WILL FACE LEGAL ACTION.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Modal Action Buttons (Print & Download PNG) -->
+            <div class="flex flex-wrap items-center justify-center gap-3 pt-2 border-t border-gray-700 no-print">
+                <button onclick="downloadCardAsPNG()" id="btnDownloadPng" class="px-5 py-2.5 rounded-xl bg-[#f5d000] hover:bg-[#e0be00] text-black font-extrabold text-sm shadow-lg transition cursor-pointer flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                    <span>ڪارڊ ڊائونلوڊ ڪريو (PNG Image)</span>
+                </button>
+                <button onclick="window.print()" class="px-5 py-2.5 rounded-xl bg-[#0d5c2f] hover:bg-[#083d1f] text-white font-bold text-sm shadow-lg transition cursor-pointer flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+                    </svg>
+                    <span>پرنٽ ڪريو / PDF</span>
+                </button>
+                <button onclick="closeCardModal()" class="px-4 py-2.5 rounded-xl bg-gray-800 hover:bg-gray-700 text-gray-300 font-bold text-sm transition cursor-pointer">
+                    بند ڪريو
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== CHANGE PIN MODAL ==================== -->
+    <div id="pinModal" class="hidden fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-sm w-full p-6 shadow-2xl space-y-4">
+            <h3 class="text-lg font-extrabold text-[#0d5c2f]">ايڊمن PIN ڪوڊ تبديل ڪريو</h3>
+            <input 
+                type="text" 
+                id="newPinInput" 
+                dir="ltr"
+                maxlength="10"
+                placeholder="نئون PIN ڪوڊ لکو"
+                class="w-full px-4 py-3 rounded-xl border border-gray-300 text-center font-mono text-lg focus:outline-none focus:border-[#0d5c2f]">
+            <div class="flex gap-2">
+                <button onclick="saveNewPin()" class="flex-1 py-2.5 rounded-xl bg-[#0d5c2f] text-white font-bold text-sm cursor-pointer">محفوظ ڪريو</button>
+                <button onclick="document.getElementById('pinModal').classList.add('hidden')" class="px-4 py-2.5 rounded-xl bg-gray-100 text-gray-700 font-bold text-sm cursor-pointer">منسوخ</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ==================== STATE & STORAGE KEYS ====================
+        const STORAGE_KEY_APPS = 'nindhanaki_tehreek_applications_v2';
+        const STORAGE_KEY_PIN = 'nindhanaki_tehreek_admin_pin_v2';
+        let isAdminLoggedIn = false;
+        let uploadedPhotoDataUrl = '';
+        let activeCardMemberId = 'NTP-0948';
+
+        // Generate clean inline SVG Portrait Avatar for pre-loaded sample so CORS never blocks PNG export
+        function createDefaultPortraitSVG() {
+            const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="240" height="260" viewBox="0 0 240 260">
+                <defs>
+                    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#93c5fd"/>
+                        <stop offset="65%" stop-color="#dbeafe"/>
+                        <stop offset="66%" stop-color="#65a30d"/>
+                        <stop offset="100%" stop-color="#3f6212"/>
+                    </linearGradient>
+                </defs>
+                <rect width="240" height="260" fill="url(#sky)"/>
+                <!-- Shoulders / Dark Navy Kurta -->
+                <path d="M35 260 C40 205 75 188 120 188 C165 188 200 205 205 260 Z" fill="#1e2438"/>
+                <path d="M104 188 L120 218 L136 188" fill="#131724"/>
+                <!-- Neck & Face -->
+                <rect x="103" y="156" width="34" height="38" rx="10" fill="#c9936b"/>
+                <ellipse cx="120" cy="118" rx="42" ry="50" fill="#d8a27a"/>
+                <!-- Beard & Mustache -->
+                <path d="M80 120 C80 155 98 170 120 170 C142 170 160 155 160 120 C156 138 142 148 120 148 C98 148 84 138 80 120 Z" fill="#2b2623" opacity="0.75"/>
+                <path d="M102 138 Q120 132 138 138" stroke="#1f1b18" stroke-width="5" stroke-linecap="round" fill="none"/>
+                <!-- Eyes & Brows -->
+                <path d="M94 103 Q104 99 112 103 M128 103 Q136 99 146 103" stroke="#1f1b18" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+                <circle cx="104" cy="111" r="3.5" fill="#1f1b18"/>
+                <circle cx="136" cy="111" r="3.5" fill="#1f1b18"/>
+                <!-- Navy Cap -->
+                <path d="M78 92 C78 55 162 55 162 92 Z" fill="#1e293b"/>
+                <path d="M75 90 Q120 82 165 90 L160 98 Q120 90 80 98 Z" fill="#0f172a"/>
+                <circle cx="120" cy="72" r="7" fill="#eab308"/>
+            </svg>`;
+            return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+        }
+
+        // Pre-loaded Sample Approved Member so Sample Card button works immediately on click
+        const DEFAULT_APPLICATIONS = [
+            {
+                id: 'NTP-0948',
+                fullName: 'MASHOOQ ALI ZARDARI',
+                fatherName: 'Muhammad Bux Zardari',
+                mobile: '0300 1234567',
+                email: 'mashooq.zardari@ntp.org.pk',
+                cnic: '45402-1234567-1',
+                designation: 'President',
+                district: 'Shaheed Benazirabad',
+                cardType: 'OFFICIAL',
+                expiryDate: '31-12-2027',
+                address: 'Nawabshah, District Shaheed Benazirabad, Sindh',
+                photo: createDefaultPortraitSVG(),
+                status: 'APPROVED',
+                submittedAt: '2026-01-15'
+            }
+        ];
+
+        function initStorage() {
+            const existingRaw = localStorage.getItem(STORAGE_KEY_APPS);
+            if (!existingRaw) {
+                localStorage.setItem(STORAGE_KEY_APPS, JSON.stringify(DEFAULT_APPLICATIONS));
+            } else {
+                try {
+                    const parsed = JSON.parse(existingRaw);
+                    if (!Array.isArray(parsed) || parsed.length === 0) {
+                        localStorage.setItem(STORAGE_KEY_APPS, JSON.stringify(DEFAULT_APPLICATIONS));
+                    }
+                } catch (e) {
+                    localStorage.setItem(STORAGE_KEY_APPS, JSON.stringify(DEFAULT_APPLICATIONS));
+                }
+            }
+
+            if (!localStorage.getItem(STORAGE_KEY_PIN)) {
+                localStorage.setItem(STORAGE_KEY_PIN, '1234');
+            }
+        }
+
+        function getApplications() {
+            try {
+                return JSON.parse(localStorage.getItem(STORAGE_KEY_APPS)) || [];
+            } catch (e) {
+                return [];
+            }
+        }
+
+        function saveApplications(apps) {
+            localStorage.setItem(STORAGE_KEY_APPS, JSON.stringify(apps));
+        }
+
+        // ==================== TAB NAVIGATION ====================
+        function switchTab(tab) {
+            const btnForm = document.getElementById('tabBtnForm');
+            const btnAdmin = document.getElementById('tabBtnAdmin');
+            const secForm = document.getElementById('sectionForm');
+            const secAdmin = document.getElementById('sectionAdmin');
+
+            if (tab === 'form') {
+                btnForm.className = 'flex-1 py-3 px-4 rounded-xl text-sm sm:text-base font-bold transition-all duration-200 bg-white text-[#0d5c2f] shadow-md cursor-pointer focus:outline-none';
+                btnForm.setAttribute('aria-selected', 'true');
+
+                btnAdmin.className = 'flex-1 py-3 px-4 rounded-xl text-sm sm:text-base font-semibold transition-all duration-200 bg-white/10 text-white border border-white/30 hover:bg-white/20 cursor-pointer focus:outline-none';
+                btnAdmin.setAttribute('aria-selected', 'false');
+
+                secForm.classList.remove('hidden');
+                secAdmin.classList.add('hidden');
+            } else {
+                btnAdmin.className = 'flex-1 py-3 px-4 rounded-xl text-sm sm:text-base font-bold transition-all duration-200 bg-white text-[#0d5c2f] shadow-md cursor-pointer focus:outline-none';
+                btnAdmin.setAttribute('aria-selected', 'true');
+
+                btnForm.className = 'flex-1 py-3 px-4 rounded-xl text-sm sm:text-base font-semibold transition-all duration-200 bg-white/10 text-white border border-white/30 hover:bg-white/20 cursor-pointer focus:outline-none';
+                btnForm.setAttribute('aria-selected', 'false');
+
+                secAdmin.classList.remove('hidden');
+                secForm.classList.add('hidden');
+
+                if (isAdminLoggedIn) {
+                    renderAdminDashboard();
+                }
+            }
+        }
+
+        // ==================== INPUT FORMATTERS ====================
+        function formatPhone(input) {
+            let digits = input.value.replace(/\D/g, '').substring(0, 11);
+            if (digits.length > 4) {
+                input.value = digits.substring(0, 4) + ' ' + digits.substring(4);
+            } else {
+                input.value = digits;
+            }
+        }
+
+        function formatCNIC(input) {
+            let digits = input.value.replace(/\D/g, '').substring(0, 13);
+            let formatted = digits;
+            if (digits.length > 5 && digits.length <= 12) {
+                formatted = digits.substring(0, 5) + '-' + digits.substring(5);
+            } else if (digits.length > 12) {
+                formatted = digits.substring(0, 5) + '-' + digits.substring(5, 12) + '-' + digits.substring(12);
+            }
+            input.value = formatted;
+        }
+
+        function handlePhotoUpload(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = new Image();
+                img.onload = function() {
+                    const canvas = document.createElement('canvas');
+                    const maxDim = 320;
+                    let width = img.width;
+                    let height = img.height;
+
+                    if (width > height) {
+                        if (width > maxDim) {
+                            height *= maxDim / width;
+                            width = maxDim;
+                        }
+                    } else {
+                        if (height > maxDim) {
+                            width *= maxDim / height;
+                            height = maxDim;
+                        }
+                    }
+                    canvas.width = width;
+                    canvas.height = height;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0, width, height);
+                    uploadedPhotoDataUrl = canvas.toDataURL('image/jpeg', 0.85);
+                    document.getElementById('photoPreview').src = uploadedPhotoDataUrl;
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        // ==================== FORM SUBMISSION ====================
+        function handleFormSubmit(event) {
+            event.preventDefault();
+
+            const fullName = document.getElementById('fullName').value.trim();
+            const fatherName = document.getElementById('fatherName').value.trim();
+            const mobile = document.getElementById('mobileNumber').value.trim();
+            const email = document.getElementById('emailAddress').value.trim();
+            const cnic = document.getElementById('cnicNumber').value.trim();
+            const designation = document.getElementById('designation').value;
+            const district = document.getElementById('district').value;
+            const address = document.getElementById('fullAddress').value.trim();
+
+            if (!fullName || !fatherName || !mobile || !cnic || !district || !address) {
+                showModal('ضروري خانا ڀريو', 'مهرباني ڪري سڀ ضروري (*) خانا مڪمل ۽ صحيح نموني ڀريو.', 'error');
+                return;
+            }
+
+            if (mobile.replace(/\D/g, '').length < 11) {
+                showModal('غلط موبائيل نمبر', 'مهرباني ڪري 11 انگن وارو درست موبائيل نمبر لکو (مثال: 0300 1234567).', 'error');
+                return;
+            }
+
+            if (cnic.replace(/\D/g, '').length < 13) {
+                showModal('غلط شناختي ڪارڊ نمبر', 'مهرباني ڪري 13 انگن وارو مڪمل شناختي ڪارڊ نمبر (CNIC) لکو.', 'error');
+                return;
+            }
+
+            if (!uploadedPhotoDataUrl) {
+                showModal('تصوير ضروري آهي', 'مهرباني ڪري ڊجيٽل شناختي ڪارڊ لاءِ پنهنجي تصوير اپلوڊ ڪريو.', 'error');
+                return;
+            }
+
+            const apps = getApplications();
+            const duplicate = apps.find(a => a.cnic === cnic);
+            if (duplicate) {
+                showModal(
+                    'درخواست اڳ ئي موجود آهي',
+                    `هن شناختي ڪارڊ نمبر (${cnic}) تي اڳ ئي درخواست جمع ٿيل آهي. توهان جو ID نمبر <b>${duplicate.id}</b> آهي.`,
+                    'error'
+                );
+                return;
+            }
+
+            // Generate sequential NTP ID (e.g. NTP-0949)
+            let maxNum = 948;
+            apps.forEach(a => {
+                const match = a.id.match(/NTP-(\d+)/i);
+                if (match) {
+                    const num = parseInt(match[1], 10);
+                    if (num > maxNum) maxNum = num;
+                }
+            });
+            const nextId = 'NTP-' + String(maxNum + 1).padStart(4, '0');
+            const today = new Date().toISOString().split('T')[0];
+
+            const newApplication = {
+                id: nextId,
+                fullName,
+                fatherName,
+                mobile,
+                email,
+                cnic,
+                designation: designation || 'Member',
+                district,
+                cardType: designation === 'Member' ? 'MEMBER' : 'OFFICIAL',
+                expiryDate: '31-12-2027',
+                address,
+                photo: uploadedPhotoDataUrl,
+                status: 'PENDING',
+                submittedAt: today
+            };
+
+            apps.unshift(newApplication);
+            saveApplications(apps);
+
+            document.getElementById('membershipForm').reset();
+            uploadedPhotoDataUrl = '';
+            document.getElementById('photoPreview').src = 'https://placehold.co/120x120/e8f3ed/0d5c2f?text=تصوير';
+
+            showModal(
+                'درخواست ڪاميابيءَ سان جمع ٿي وئي!',
+                `توهان جي ميمبرشپ درخواست مرڪزي منظوري لاءِ موڪلي وئي آهي.<br><br>
+                <div class="p-3 rounded-xl bg-gray-50 border border-gray-200 text-center">
+                    <span class="text-xs text-gray-500 block">توهان جو ڊجيٽل ڪارڊ / ٽريڪنگ نمبر:</span>
+                    <span dir="ltr" class="text-xl font-mono font-extrabold text-[#0d5c2f]">${nextId}</span>
+                </div>
+                <p class="text-xs text-gray-500 mt-2">نوٽ: مرڪزي ايڊمن جي منظوري بعد توهان هيٺ ڏنل اسٽيٽس چيڪر ذريعي پنهنجو ڊجيٽل ڪارڊ ڊائونلوڊ ڪري سگهندا.</p>`,
+                'success'
+            );
+        }
+
+        // ==================== CHECK APPLICATION STATUS ====================
+        function checkApplicationStatus() {
+            const query = document.getElementById('trackInput').value.trim().toUpperCase();
+            const resultBox = document.getElementById('trackResult');
+            if (!query) return;
+
+            const cleanQuery = query.replace(/\s+/g, '');
+            const apps = getApplications();
+            const found = apps.find(a =>
+                a.id.toUpperCase() === cleanQuery ||
+                a.cnic.replace(/\s+/g, '') === cleanQuery ||
+                a.mobile.replace(/\s+/g, '') === cleanQuery
+            );
+
+            resultBox.classList.remove('hidden');
+            if (!found) {
+                resultBox.className = 'mt-3 p-3.5 rounded-xl text-sm bg-red-50 text-[#c0262d] border border-red-200';
+                resultBox.innerHTML = 'معاف ڪجو، هن نمبر تي ڪا به درخواست نه ملي.';
+                return;
+            }
+
+            let statusText = 'التوا هيٺ (مرڪزي منظوري جو انتظار)';
+            let boxClass = 'bg-amber-50 text-amber-800 border-amber-200';
+
+            if (found.status === 'APPROVED') {
+                statusText = 'منظور ٿيل (Approved)';
+                boxClass = 'bg-emerald-50 text-[#0d5c2f] border-emerald-200';
+            } else if (found.status === 'REJECTED') {
+                statusText = 'رد ٿيل (Rejected)';
+                boxClass = 'bg-red-50 text-[#c0262d] border-red-200';
+            }
+
+            resultBox.className = `mt-3 p-3.5 rounded-xl text-sm border ${boxClass} flex items-center justify-between gap-2`;
+            if (found.status !== 'APPROVED') {
+                resultBox.innerHTML = `<div><p class="font-bold">${found.fullName} (${found.id})</p><p class="text-xs mt-1">اسٽيٽس: <b>${statusText}</b></p><p class="text-xs mt-1">ڊجيٽل ڪارڊ ايڊمن جي منظوري کان پوءِ دستياب ٿيندو.</p></div>`;
+                return;
+            }
+            resultBox.innerHTML = `
+                <div>
+                    <p class="font-bold">${found.fullName} (<span dir="ltr" class="font-mono">${found.id}</span>)</p>
+                    <p class="text-xs mt-0.5">عهدو: ${found.designation} · ضلعو: ${found.district}</p>
+                    <p class="text-xs mt-0.5">اسٽيٽس: <b>${statusText}</b></p>
+                </div>
+                <button onclick="openCardModal('${found.id}')" class="px-3.5 py-2 rounded-xl bg-[#0d5c2f] hover:bg-[#083d1f] text-white text-xs font-bold shrink-0 cursor-pointer shadow-xs">
+                    ڊجيٽل ڪارڊ ڏسو
+                </button>
+            `;
+        }
+
+        // ==================== ADMIN PANEL LOGIC ====================
+        function handleAdminLogin(event) {
+            event.preventDefault();
+            const enteredPin = document.getElementById('adminPinInput').value.trim();
+            const savedPin = localStorage.getItem(STORAGE_KEY_PIN) || '1234';
+
+            if (enteredPin === savedPin) {
+                isAdminLoggedIn = true;
+                document.getElementById('adminPinInput').value = '';
+                document.getElementById('adminLoginView').classList.add('hidden');
+                document.getElementById('adminDashboardView').classList.remove('hidden');
+                renderAdminDashboard();
+            } else {
+                showModal('غلط PIN ڪوڊ', 'داخل ڪيل ايڊمن PIN ڪوڊ درست ناهي. ٻيهر ڪوشش ڪريو.', 'error');
+            }
+        }
+
+        function handleAdminLogout() {
+            isAdminLoggedIn = false;
+            document.getElementById('adminDashboardView').classList.add('hidden');
+            document.getElementById('adminLoginView').classList.remove('hidden');
+        }
+
+        function openPinModal() {
+            document.getElementById('newPinInput').value = '';
+            document.getElementById('pinModal').classList.remove('hidden');
+        }
+
+        function saveNewPin() {
+            const newPin = document.getElementById('newPinInput').value.trim();
+            if (newPin.length < 4) {
+                showModal('ننڍو ڪوڊ', 'PIN ڪوڊ گهٽ ۾ گهٽ 4 انگن جو هجڻ گهرجي.', 'error');
+                return;
+            }
+            localStorage.setItem(STORAGE_KEY_PIN, newPin);
+            document.getElementById('pinModal').classList.add('hidden');
+            showModal('ڪاميابي', 'نئون ايڊمن PIN ڪوڊ ڪاميابيءَ سان محفوظ ڪيو ويو.', 'success');
+        }
+
+        function renderAdminDashboard() {
+            const apps = getApplications();
+            document.getElementById('statTotal').textContent = apps.length;
+            document.getElementById('statApproved').textContent = apps.filter(a => a.status === 'APPROVED').length;
+            document.getElementById('statPending').textContent = apps.filter(a => a.status === 'PENDING').length;
+            document.getElementById('statRejected').textContent = apps.filter(a => a.status === 'REJECTED').length;
+
+            renderAdminList();
+        }
+
+        function renderAdminList() {
+            const apps = getApplications();
+            const search = document.getElementById('adminSearchInput').value.trim().toLowerCase();
+            const statusFilter = document.getElementById('adminFilterStatus').value;
+            const listContainer = document.getElementById('adminApplicationsList');
+
+            const filtered = apps.filter(app => {
+                const matchesStatus = statusFilter === 'ALL' || app.status === statusFilter;
+                const matchesSearch = !search || 
+                    app.fullName.toLowerCase().includes(search) ||
+                    app.fatherName.toLowerCase().includes(search) ||
+                    app.cnic.includes(search) ||
+                    app.mobile.includes(search) ||
+                    app.district.toLowerCase().includes(search) ||
+                    (app.designation && app.designation.toLowerCase().includes(search)) ||
+                    app.id.toLowerCase().includes(search);
+                return matchesStatus && matchesSearch;
+            });
+
+            if (filtered.length === 0) {
+                listContainer.innerHTML = `
+                    <div class="text-center py-10 bg-gray-50 rounded-2xl border border-dashed border-gray-300 text-gray-500 text-sm">
+                        ڪا به درخواست نه ملي.
+                    </div>
+                `;
+                return;
+            }
+
+            listContainer.innerHTML = filtered.map(app => {
+                let badgeHtml = '';
+                if (app.status === 'APPROVED') {
+                    badgeHtml = `<span class="px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-[#0d5c2f]">منظور ٿيل</span>`;
+                } else if (app.status === 'REJECTED') {
+                    badgeHtml = `<span class="px-2.5 py-1 rounded-full text-xs font-bold bg-red-100 text-[#c0262d]">رد ٿيل</span>`;
+                } else {
+                    badgeHtml = `<span class="px-2.5 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800">التوا هيٺ</span>`;
+                }
+
+                return `
+                <div class="p-4 rounded-2xl border border-gray-200 bg-white shadow-xs hover:shadow-md transition space-y-3">
+                    <div class="flex items-start justify-between gap-3">
+                        <div class="flex items-center gap-3">
+                            <img src="${app.photo}" alt="${app.fullName}" class="w-14 h-14 rounded-xl object-cover border-2 border-[#e5c158] shrink-0">
+                            <div>
+                                <div class="flex items-center gap-2 flex-wrap">
+                                    <h4 class="font-extrabold text-gray-900 text-base">${app.fullName}</h4>
+                                    <span dir="ltr" class="text-xs font-mono font-bold text-[#c0262d] bg-red-50 border border-red-200 px-2 py-0.5 rounded">${app.id}</span>
+                                </div>
+                                <p class="text-xs text-gray-600 mt-0.5">
+                                    عهدو: <span class="font-bold text-gray-900">${app.designation || 'Member'}</span> · 
+                                    ضلعو: <span class="text-[#0d5c2f] font-bold">${app.district}</span>
+                                </p>
+                                <p class="text-[11px] text-gray-400">والد: ${app.fatherName}</p>
+                            </div>
+                        </div>
+                        <div class="shrink-0">${badgeHtml}</div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-1.5 text-xs text-gray-600 bg-gray-50 p-2.5 rounded-xl">
+                        <div>موبائيل: <span dir="ltr" class="font-mono font-semibold text-gray-800">${app.mobile}</span></div>
+                        <div>CNIC: <span dir="ltr" class="font-mono font-semibold text-gray-800">${app.cnic}</span></div>
+                        <div>قسم / مدت: <span dir="ltr" class="font-mono font-semibold text-gray-800">${app.cardType || 'OFFICIAL'} (${app.expiryDate || '31-12-2027'})</span></div>
+                        <div class="sm:col-span-3">پتو: <span class="text-gray-800">${app.address}</span></div>
+                    </div>
+
+                    <div class="flex flex-wrap items-center justify-between gap-2 pt-1">
+                        <div class="flex flex-wrap gap-1.5">
+                            <button onclick="updateAppStatus('${app.id}', 'APPROVED')" class="px-3 py-1.5 rounded-lg bg-[#0d5c2f] hover:bg-[#083d1f] text-white text-xs font-bold transition cursor-pointer">
+                                منظور ڪريو
+                            </button>
+                            <button onclick="updateAppStatus('${app.id}', 'REJECTED')" class="px-3 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold transition cursor-pointer">
+                                رد ڪريو
+                            </button>
+                            <button onclick="openEditMemberModal('${app.id}')" class="px-3 py-1.5 rounded-lg bg-gray-700 hover:bg-gray-800 text-white text-xs font-bold transition cursor-pointer">
+                                عهدو / تفصيل بدلايو
+                            </button>
+                            <button onclick="openCardModal('${app.id}', true)" class="px-3 py-1.5 rounded-lg bg-[#c0262d] hover:bg-red-700 text-white text-xs font-bold transition cursor-pointer shadow-xs">
+                                ڊجيٽل ڪارڊ ڏسو / پرنٽ ڪريو
+                            </button>
+                        </div>
+                        <button onclick="deleteApplication('${app.id}')" class="px-3 py-1.5 rounded-lg bg-red-50 hover:bg-red-100 text-[#c0262d] text-xs font-bold transition cursor-pointer">
+                            ڊليٽ
+                        </button>
+                    </div>
+                </div>
+                `;
+            }).join('');
+        }
+
+        function openEditMemberModal(id) {
+            const apps = getApplications();
+            const app = apps.find(a => a.id === id);
+            if (!app) return;
+
+            document.getElementById('editAppId').value = app.id;
+            document.getElementById('editFullName').value = app.fullName;
+            document.getElementById('editDesignation').value = app.designation || 'Member';
+            document.getElementById('editCardType').value = app.cardType || 'OFFICIAL';
+            document.getElementById('editExpiryDate').value = app.expiryDate || '31-12-2027';
+            document.getElementById('editMemberModal').classList.remove('hidden');
+        }
+
+        function saveEditedMember() {
+            const id = document.getElementById('editAppId').value;
+            const apps = getApplications();
+            const index = apps.findIndex(a => a.id === id);
+            if (index !== -1) {
+                apps[index].fullName = document.getElementById('editFullName').value.trim() || apps[index].fullName;
+                apps[index].designation = document.getElementById('editDesignation').value.trim() || 'Member';
+                apps[index].cardType = document.getElementById('editCardType').value;
+                apps[index].expiryDate = document.getElementById('editExpiryDate').value.trim() || '31-12-2027';
+                saveApplications(apps);
+                renderAdminDashboard();
+            }
+            document.getElementById('editMemberModal').classList.add('hidden');
+        }
+
+        function updateAppStatus(id, newStatus) {
+            if (!isAdminLoggedIn) {
+                showModal('رسائي بند', 'اسٽيٽس تبديل ڪرڻ لاءِ ايڊمن لاگ اِن ضروري آهي.', 'error');
+                return;
+            }
+            if (!['APPROVED', 'REJECTED', 'PENDING'].includes(newStatus)) return;
+            const apps = getApplications();
+            const index = apps.findIndex(a => a.id === id);
+            if (index !== -1) {
+                apps[index].status = newStatus;
+                saveApplications(apps);
+                renderAdminDashboard();
+            }
+        }
+
+        function deleteApplication(id) {
+            let apps = getApplications();
+            apps = apps.filter(a => a.id !== id);
+            saveApplications(apps);
+            renderAdminDashboard();
+        }
+
+        function exportApplicationsCSV() {
+            const apps = getApplications();
+            if (apps.length === 0) return;
+
+            const headers = ['ID', 'Full Name', 'Father Name', 'Designation', 'District', 'Card Type', 'Expiry Date', 'Mobile', 'CNIC', 'Address', 'Status', 'Date'];
+            const rows = apps.map(a => [
+                a.id,
+                `"${a.fullName}"`,
+                `"${a.fatherName}"`,
+                `"${a.designation || 'Member'}"`,
+                `"${a.district}"`,
+                `"${a.cardType || 'OFFICIAL'}"`,
+                `"${a.expiryDate || '31-12-2027'}"`,
+                `"${a.mobile}"`,
+                `"${a.cnic}"`,
+                `"${a.address.replace(/"/g, '""')}"`,
+                a.status,
+                a.submittedAt
+            ]);
+
+            const csvContent = '\uFEFF' + [headers.join(','), ...rows.map(r => r.join(','))].join('\n');
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.setAttribute('download', `Nindhanaki_Tehreek_Members_${new Date().toISOString().slice(0,10)}.csv`);
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // ==================== BARCODE & QR SVG GENERATORS ====================
+        function generateBarcodeSVG(seedText) {
+            let hash = 0;
+            for (let i = 0; i < seedText.length; i++) {
+                hash = ((hash << 5) - hash) + seedText.charCodeAt(i);
+                hash |= 0;
+            }
+            let x = 2;
+            let bars = '';
+            // Start guard bars
+            bars += `<rect x="${x}" y="0" width="2" height="40" fill="#000"/><rect x="${x+4}" y="0" width="1" height="40" fill="#000"/>`;
+            x += 8;
+
+            for (let i = 0; i < 42; i++) {
+                const val = Math.abs((hash + i * 37) % 7);
+                const w = (val % 3) + 1;
+                const gap = ((val >> 1) % 2) + 1.5;
+                bars += `<rect x="${x}" y="0" width="${w}" height="40" fill="#000"/>`;
+                x += w + gap;
+                if (x > 188) break;
+            }
+            // End guard bars
+            bars += `<rect x="192" y="0" width="1.5" height="40" fill="#000"/><rect x="195" y="0" width="2.5" height="40" fill="#000"/>`;
+            return `<svg viewBox="0 0 200 40" preserveAspectRatio="none" class="w-full h-full block">${bars}</svg>`;
+        }
+
+        function generateQRCodeSVG(seedText) {
+            let hash = 2166136261;
+            for (let i = 0; i < seedText.length; i++) {
+                hash ^= seedText.charCodeAt(i);
+                hash = Math.imul(hash, 16777619);
+            }
+            const size = 21;
+            let rects = `<rect width="21" height="21" fill="#ffffff"/>`;
+
+            // Finder patterns (Top-Left, Top-Right, Bottom-Left)
+            const drawFinder = (ox, oy) => {
+                rects += `<rect x="${ox}" y="${oy}" width="7" height="7" fill="#000"/>`;
+                rects += `<rect x="${ox+1}" y="${oy+1}" width="5" height="5" fill="#fff"/>`;
+                rects += `<rect x="${ox+2}" y="${oy+2}" width="3" height="3" fill="#000"/>`;
+            };
+            drawFinder(0, 0);
+            drawFinder(14, 0);
+            drawFinder(0, 14);
+
+            // Deterministic data modules
+            for (let y = 0; y < size; y++) {
+                for (let x = 0; x < size; x++) {
+                    const inTL = x < 8 && y < 8;
+                    const inTR = x > 12 && y < 8;
+                    const inBL = x < 8 && y > 12;
+                    if (inTL || inTR || inBL) continue;
+
+                    const bit = ((hash >>> ((x + y * 5) % 24)) ^ (x * 7 + y * 13)) & 1;
+                    if (bit === 1) {
+                        rects += `<rect x="${x}" y="${y}" width="1" height="1" fill="#000"/>`;
+                    }
+                }
+            }
+            return `<svg viewBox="0 0 21 21" shape-rendering="crispEdges" class="w-full h-full block">${rects}</svg>`;
+        }
+
+        // ==================== DIGITAL IDENTITY CARD MODAL ====================
+        function openCardModal(id, adminPreview = false) {
+            const apps = getApplications();
+            const app = apps.find(a => a.id === id);
+            if (!app) return;
+            if (app.status !== 'APPROVED' && !adminPreview) {
+                showModal('ڪارڊ اڃا جاري ناهي ٿيو', 'هي درخواست اڃا منظور ٿيل ناهي. ايڊمن جي منظوري کان پوءِ ئي ڊجيٽل ڪارڊ ڏسي يا ڊائونلوڊ ڪري سگهجي ٿو.', 'error');
+                return;
+            }
+
+            activeCardMemberId = app.id;
+            const upperName = app.fullName.toUpperCase();
+            const designation = app.designation || 'Member';
+            const district = app.district || 'Sindh';
+            const cardType = app.cardType || 'OFFICIAL';
+            const expiryDate = app.expiryDate || '31-12-2027';
+
+            // Populate Front Card
+            document.getElementById('frontCardPhoto').src = app.photo;
+            document.getElementById('frontCardName').textContent = upperName;
+            document.getElementById('frontCardDesignation').textContent = designation;
+            document.getElementById('frontCardDistrict').textContent = district;
+            document.getElementById('frontCardId').textContent = app.id;
+            document.getElementById('frontCardType').textContent = cardType;
+            document.getElementById('frontCardExpiry').textContent = expiryDate;
+            document.getElementById('frontBarcodeText').textContent = '4' + app.id;
+            document.getElementById('frontBarcodeSvg').innerHTML = generateBarcodeSVG('4' + app.id);
+            document.getElementById('frontQrSvg').innerHTML = generateQRCodeSVG(`${app.id}|${upperName}|${app.cnic}`);
+
+            // Populate Back Card
+            document.getElementById('backCardName').textContent = upperName;
+            document.getElementById('backCardDesigDist').textContent = `${designation}, District ${district}`;
+            document.getElementById('backCardId').textContent = app.id;
+            document.getElementById('backBarcodeSvg').innerHTML = generateBarcodeSVG(app.id);
+            document.getElementById('backQrSvg').innerHTML = generateQRCodeSVG(`VERIFY:${app.id}:${app.cnic}`);
+
+            setCardViewMode('both');
+            document.getElementById('cardModal').classList.remove('hidden');
+        }
+
+        function setCardViewMode(mode) {
+            const front = document.getElementById('ntpFrontCard');
+            const back = document.getElementById('ntpBackCard');
+            const btnBoth = document.getElementById('btnViewBoth');
+            const btnFront = document.getElementById('btnViewFront');
+            const btnBack = document.getElementById('btnViewBack');
+
+            const activeCls = 'px-3 py-1.5 rounded-lg bg-[#f5d000] text-black transition cursor-pointer';
+            const inactiveCls = 'px-3 py-1.5 rounded-lg text-gray-300 hover:text-white transition cursor-pointer';
+
+            btnBoth.className = mode === 'both' ? activeCls : inactiveCls;
+            btnFront.className = mode === 'front' ? activeCls : inactiveCls;
+            btnBack.className = mode === 'back' ? activeCls : inactiveCls;
+
+            if (mode === 'both') {
+                front.classList.remove('hidden');
+                back.classList.remove('hidden');
+            } else if (mode === 'front') {
+                front.classList.remove('hidden');
+                back.classList.add('hidden');
+            } else {
+                front.classList.add('hidden');
+                back.classList.remove('hidden');
+            }
+        }
+
+        function closeCardModal() {
+            document.getElementById('cardModal').classList.add('hidden');
+        }
+
+        async function downloadCardAsPNG() {
+            const wrapper = document.getElementById('printableCardsWrapper');
+            const btn = document.getElementById('btnDownloadPng');
+            const originalHtml = btn.innerHTML;
+
+            try {
+                btn.disabled = true;
+                btn.innerHTML = '<span>تيار ٿي رهيو آهي...</span>';
+
+                const canvas = await html2canvas(wrapper, {
+                    scale: 3,
+                    backgroundColor: null,
+                    useCORS: true,
+                    logging: false
+                });
+
+                const link = document.createElement('a');
+                link.download = `${activeCardMemberId}_Digital_Identity_Card.png`;
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+            } catch (err) {
+                showModal('ڊائونلوڊ مسئلو', 'تصوير ڊائونلوڊ ڪرڻ ۾ مسئلو آيو، مهرباني ڪري پرنٽ / PDF بٽڻ استعمال ڪريو.', 'error');
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = originalHtml;
+            }
+        }
+
+        // ==================== CUSTOM MODAL ====================
+        function showModal(title, htmlBody, type = 'success', createdAppId = null) {
+            const modal = document.getElementById('customModal');
+            const iconBox = document.getElementById('modalIcon');
+            const actionsBox = document.getElementById('modalActions');
+
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalBody').innerHTML = htmlBody;
+
+            if (type === 'error') {
+                iconBox.className = 'w-14 h-14 rounded-full bg-red-100 text-[#c0262d] flex items-center justify-center mx-auto';
+                iconBox.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" /></svg>`;
+            } else {
+                iconBox.className = 'w-14 h-14 rounded-full bg-[#e8f3ed] text-[#0d5c2f] flex items-center justify-center mx-auto';
+                iconBox.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>`;
+            }
+
+            if (createdAppId) {
+                actionsBox.innerHTML = `
+                    <button onclick="closeModal(); openCardModal('${createdAppId}')" class="px-5 py-2.5 rounded-xl bg-[#0d5c2f] text-white font-bold text-sm hover:bg-[#083d1f] transition cursor-pointer">
+                        ڊجيٽل شناختي ڪارڊ ڏسو
+                    </button>
+                    <button onclick="closeModal()" class="px-5 py-2.5 rounded-xl bg-gray-100 text-gray-700 font-bold text-sm hover:bg-gray-200 transition cursor-pointer">
+                        بند ڪريو
+                    </button>
+                `;
+            } else {
+                actionsBox.innerHTML = `
+                    <button onclick="closeModal()" class="px-6 py-2.5 rounded-xl bg-[#0d5c2f] text-white font-bold text-sm hover:bg-[#083d1f] transition cursor-pointer">
+                        ٺيڪ آهي
+                    </button>
+                `;
+            }
+
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('customModal').classList.add('hidden');
+        }
+
+        window.addEventListener('DOMContentLoaded', initStorage);
+    </script>
+</body>
+</html>
